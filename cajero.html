@@ -1,0 +1,43 @@
+
+    <div class="list-product" ng-controller="lista_controller as lista" >
+
+        <input type="number" ng-model="lista.cantidad">
+        <select ng-model="lista.selectedProduct">
+            <option value="{{p.id}}"  ng-repeat="p in lista.productos">
+                {{p.id}} {{p.nombre_producto}} ${{p.precio}}
+            </option>
+                </select>
+        <input type="button" value="Añadir"  ng-click="lista.addCarrito()">
+        
+        <table>
+
+            <thead>
+
+                <tr>
+                    <td>Producto</td>
+                    <td>Precio</td>
+                    <td> cantidad</td>
+
+                    <td>total</td>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr ng-repeat="p in lista.productos">
+                    
+                    <td> {{p.nombre_producto}}</td>
+                    <td> {{p.precio}}</td>
+                    <td> {{p.cantidad}}</td>
+                    <td> {{p.total}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        ${{lista.getTotalCarrito()}}
+               
+                    </td>
+                  </tr>
+            </tbody>
+        </table>
+    
+    </div>

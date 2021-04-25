@@ -15,23 +15,34 @@
     <title>ANGULARJS</title>
 </head>
     <!-- para especificar que controllador -->
-<body ng-controller="nombre_controller">
-
+<body >
+<div id="menu">
+    <ul>
+        <li>
+<a href="#!">Cajero</a>
+        </li>
+        <li>
+            <a href="#!productos">Productos</a>
+        </li>
+    </ul>
+</div>
     <!--  añade valores al modelo-->
-<input type="text" name="" id="" ng-model="apellido">
+    <div ng-controller="nombre_controller">
 
+  
+    <span>Escriba el apellido</span>
+<input type="text" name="" id="" ng-model="apellido">
+<span>Su nombre completo es: </span>
 {{nombre}}
 {{apellido}}
 
 <br>
-<div class="list-product" ng-controller="lista_controller" >
-
-    <li ng-repeat="p in productos">
-        {{p.id}} {{p.nombre}} ${{p.precio}}
-    </li>
+<br>
 </div>
+<!-- las funciones del router-->
+<div ng-view>
 
-
+</div>
 
 </body>
 </html>

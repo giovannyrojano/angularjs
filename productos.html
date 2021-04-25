@@ -1,0 +1,12 @@
+
+<div ng-controller="lista_controller as lista">
+<h1>Registra productos</h1>
+
+<span> nombre</span>
+    <input type="text" ng-model="lista.nombre_producto">
+    
+    <span>precio</span>
+    <input type="number" ng-model="lista.precio">
+
+    <input type="button" value="Añadir" ng-click="lista.addProduct();lista.update()">
+</div>
